@@ -43,7 +43,7 @@ export class AddComponent implements OnInit, OnDestroy {
     });
 
     this.http
-      .get<Country[]>('https://restcountries.com/v2/all')
+      .get<Country[]>('https://restcountries.com/v2/all?fields=capital')
       .pipe(first())
       .subscribe(countries => {
         countries.forEach(country => {
